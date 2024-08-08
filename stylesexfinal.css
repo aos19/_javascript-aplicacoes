@@ -1,0 +1,29 @@
+body {
+    background-color:rgb(107, 61, 145) ;
+    font: normal 13pt sans-serif;
+}
+
+header {
+    color: white;
+    text-align: center;
+    font-size: 18pt;
+}
+
+section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px #00000085;
+}
+
+select#cx2 {
+    width: 170px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}

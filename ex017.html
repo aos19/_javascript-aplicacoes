@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body {
+            background-color:rgb(235, 232, 52) ;
+            font: normal 13pt sans-serif;
+        }
+
+        header {
+            color: white;
+            text-align: center;
+            font-size: 18pt;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px #00000085;
+        }
+
+        footer {
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+
+        div#numero {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+
+    <section>
+        <div id="numero">
+            Número: <input type="number" name="fator" id="txt1">
+            <input type="button" value="Gerar tabuada" onclick="tabuada()">
+        </div>
+
+        <select name="tabuada" id="seltab" size="10">
+            <option value="">Digite um número acima</option>    
+        </select>
+    
+    </section>
+
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+
+    <script>
+        function tabuada() {  
+            let fator = document.getElementById('txt1');
+            let tabuada = document.getElementById('seltab');
+            if (fator.value.length == 0){
+                alert('Digite um número para gerar a tabuada');
+            } else {
+                let n = Number(fator.value);
+                let c = 1;
+                tabuada.innerHTML = '';
+                while (c <= 10) {
+                    let item = document.createElement('option');
+                    item.text = `${n} x ${c} = ${n * c}`
+                    item.value = `tabuada${c}`
+                    tabuada.appendChild(item)
+                    c++;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

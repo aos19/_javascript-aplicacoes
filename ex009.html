@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descobrindo a nacionalidade</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background: url("todas-as-bandeiras-nacionais-do-mundo-estilo-de-fundo_18981-512.avif");
+        }
+
+        h1 {
+            margin: auto;
+            background: #fff;
+            text-align: center;
+            padding: 12px;
+            color: #000;
+            width: 500px;
+            margin-bottom: 150px;
+        }
+
+        input {
+            font-size: 13pt;
+            margin-left: 590px;
+            border-radius: 7px;
+            width: 150px;
+            height: 40px;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Brasileiro ou estrangeiro?</h1>    
+    <input type="text" name="nac" id="nac">
+    <input type="button" name="bot" id="bot" value="Descobrir" onclick="conferir()">        
+    
+    <script>
+        function conferir() {
+            var txt1 = document.getElementById('nac');
+            var res = (txt1.value);
+                alert(`Vivendo em ${res}`)
+                if (res == 'Brasil') {
+                    alert('Brasileiro!')
+                    } else {
+                        alert('Estrangeiro!')
+                    }
+        }
+    </script>
+</body>
+</html>

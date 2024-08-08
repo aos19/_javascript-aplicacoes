@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Contador</title>
+    <style>
+        body {
+            background-color:rgb(207, 67, 67) ;
+            font: normal 13pt sans-serif;
+        }
+
+        header {
+            color: white;
+            text-align: center;
+            font-size: 18pt;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px #00000085;
+        }
+
+        footer {
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+
+    <section>
+        <p><strong>Início: </strong><input type="number" name="inicio" id="txti"></p>
+        <p><strong>Fim: </strong> <input type="number" name="fim" id="txtf"></p>
+        <p><strong>Passo: </strong> <input type="number" name="passo" id="txtp"></p>
+        <p><input type="button" value="Calcular" onclick="calcular()">
+        </p>
+
+        <div id="res">
+        Preparando a contagem...
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+
+    <script>
+        function calcular() {  
+            let inicio = document.getElementById('txti');
+            let fim = document.querySelector('#txtf');
+            let passo = document.querySelector('#txtp');
+            let res = document.getElementById('res');
+ 
+            if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {
+                alert("Faltam dados!");
+            }  else {
+                res.innerHTML = "Contando: <br>"
+                let i = Number(inicio.value);
+                let f = Number(fim.value);
+                let p = Number(passo.value);
+                if (p <= 0) {
+                    alert("Passo inválido! Considerando Passo 1");
+                    p = 1
+                }
+                else if (i < f) {
+                for(let c = i; c <= f; c += p) {
+                    res.innerHTML += ` <b>${c}</b>  \u{1F449}`
+                }
+                } else {
+                    for(let c = i; c >= f; c -= p) {
+                        res.innerHTML += ` <b>${c}</b> \u{1F449}`
+                }
+            }
+        res.innerHTML += `\u{1F3C1}`;
+    }
+}
+    </script>
+</body>
+</html>

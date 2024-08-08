@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <style>
+        body {
+            background-color:rgb(46, 46, 255) ;
+            font: normal 13pt sans-serif;
+        }
+
+        header {
+            color: white;
+            text-align: center;
+            font-size: 18pt;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px #00000085;
+        }
+
+        footer {
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+
+        div#msg {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+</head>
+
+<body onload="carregar()">
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+
+    <section>
+        <div id="msg">
+            Aqui vai aparecer a mensagem...
+        </div>
+
+        <div id="fpto">
+            <img id="imagem" src="pexels-gareth-davies-230510-910411.jpg" alt="Foto do dia" width="500px" lenght="300px">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; CursoemVídeo</p>
+    </footer>
+
+    <script>
+        function carregar() {  
+        var msg = document.getElementById('msg');
+        var img = document.querySelector('img#imagem');
+        var data = new Date();
+        var hora = data.getHours();
+        msg.innerHTML = `Agora são ${hora} horas.`
+
+        if (hora >= 0 && hora <= 12){
+            // BOM DIA!
+            img.src = 'pexels-gareth-davies-230510-910411.jpg'
+            document.body.style.background = '#e2cd9f'
+        } else if (hora >= 12 && hora <= 18) {
+            // BOA TARDE!
+            img.src = 'pexels-andersonmartins-retratos-2386144.jpg'
+            document.body.style.background = '#b9846f'
+        } else {
+            // BOA NOITE!
+            img.src = 'pexels-fotios-photos-730256.jpg'
+            document.body.style.background = '#000'
+        }
+        }
+    </script>
+</body>
+</html>
