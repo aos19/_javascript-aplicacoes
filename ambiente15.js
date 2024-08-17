@@ -4,6 +4,7 @@ let num = [9, 7, 5, 3, 1]
 //num.sort();
 console.log(num)
 
+// TESTE/ALTERAÇÃO AULA DE GITHUB Alura
 console.log(`O primeiro valor do vetor é ${num[0]}`)
 console.log(`O vetor tem ${num.length} posições`);
 
