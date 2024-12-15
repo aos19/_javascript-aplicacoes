@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Itens</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            gap: 7px;
+        }
+
+        .titulo {
+            font-size: 25pt;
+            text-align: center;
+            color: #000;
+        }
+
+        .area_insere {
+            width: 200px;
+            height: 20px;
+            padding: 6.5px;
+            margin-bottom: 10px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            font-size: 12pt;
+        }
+
+        .area_insere:focus {
+            background-color: rgb(243, 236, 236);
+        }
+
+        .botao_adicionar,
+        .botao_retirar,
+        .botao_apagar {
+            width: fit-content;
+            height: fit-content;
+            padding: 7px;
+            margin: 0;
+            border-radius: 5px;
+            font-size: 12pt;
+            background-color: #fff;
+       }
+
+       .botao_adicionar {
+            border: 1px solid green;
+            color: green;
+       }
+
+       .botao_adicionar:hover {
+            color: #fff;
+            background-color: green;
+       }
+
+       .botao_retirar {
+            border: 1px solid darkred;
+            color: darkred;
+       }
+
+       .botao_retirar:hover {
+            color: #fff;
+            background-color: darkred;
+       }
+
+       .botao_apagar {
+            border: 1px solid royalblue;
+            color: royalblue;
+       }
+
+       .botao_apagar:hover {
+            color: #fff;
+            background-color: royalblue;
+       }
+
+       .fa-plus,
+       .fa-trash,
+       .fa-arrows-rotate {
+            display: none;
+       }
+
+       .caixa1 {
+            position: absolute;
+            margin-top: 70px;
+            background-color: rgb(234, 240, 53);
+            width: 230px;
+            height: 300px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            font-size: 12pt;
+            color: #000;
+       }
+
+       .caixa1:focus {
+            background-color: rgb(232, 226, 226);
+            outline: none;
+       }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Lista de Itens</h1><br>
+    <section>
+        <!-- Área para inserir os itens -->
+        <input class="area_insere" type="text" placeholder="Adicione seus itens aqui">
+        
+        <!-- Botões de adicionar, retirar e apagar itens -->
+        <button class="botao_adicionar" onmouseover="mudaIcone()" onmouseout="tiraIcone()">Adicione  <i class="fa-solid fa-plus"></i></button>
+        <button class="botao_retirar" onmouseover="mudaIcone2()" onmouseout="tiraIcone2()">Retire  <i class="fa-solid fa-trash"></i></button>
+        <button class="botao_apagar" onmouseover="mudaIcone3()" onmouseout="tiraIcone3()">Apague  <i class="fa-solid fa-arrows-rotate"></i></button>
+
+        <div class="caixa1">
+            <ul class="lista_itens"></ul>
+        </div>
+    </section>
+
+    <script src="botoes.js"></script>
+    <script src="mecanicas.js"></script>
+</body>
+</html>
